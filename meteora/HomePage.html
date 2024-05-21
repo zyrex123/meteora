@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meteora</title>
+
+
+    <link rel="icon" href="dbc_logo.png" type="image">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 200px;
+        }
+
+        .top-center {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 30px;
+            font-family: "Arial", sans-serif;
+            font-weight: bold;
+
+            -webkit-text-stroke: 2px #030101;
+
+        }
+
+        body {
+            background-image: url('Meteora.png');
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+            height: 100vh;
+
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        a {
+            color: rgb(243, 243, 243);
+
+            padding: 10px 16px;
+            margin-right: 10px;
+            text-decoration: none;
+
+            margin-right: 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            overflow: hidden;
+            background-color: #02045e;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: rgb(198, 152, 104);
+            text-align: center;
+            padding: 25px 16px;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+            animation: zoom-animation 8s infinite alternate;
+        }
+
+        @keyframes zoom-animation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+
+        .navbar a:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .navbar a:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .navbar a:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .navbar a:nth-child(4) {
+            animation-delay: 15s;
+        }
+
+        .navbar a:hover {
+            color: rgb(151, 114, 75);
+            transform: translateY(2px);
+        }
+
+        .navbar a:active {
+            transform: translateY(4px);
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        window.onload = function () {
+            loadPage('home.html');
+        };
+    </script>
+</head>
+
+<body>
+    <nav class="top-center">
+        <div class="navbar">
+            <img src="donboscoimg.jpg" alt="donboscoimg" style="float:left; width:90px; height:90px;">
+            <a href="#" onclick="loadPage('Home.html');" style="margin-left:290px">HOME</a>
+            <a href="#" onclick="loadPage('About.html');" style="margin-left:50px">ABOUT</a>
+            <a href="#" onclick="loadPage('Events.html');" style="margin-left:40px">EVENTS</a>
+            <a href="#" onclick="loadPage('Register.html');" style="margin-left:50px">REGISTER</a>
+        </div>
+    </nav>
+    <div id="content" style="margin-top: 20px;"></div>
+
+    
+</body>
+
+</html>

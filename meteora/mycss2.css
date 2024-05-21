@@ -1,0 +1,67 @@
+#dark-cover {
+    margin-top: 50px; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+.details-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; 
+}
+
+.details-table th,
+.details-table td {
+    border: 5px solid #0a0707;
+    padding: 8px;
+    text-align: left;
+    color: #000000; 
+}
+
+.details-table td {
+    color: #fffcfc;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.details-table th {
+    background-color: #a8a1a1;
+    font-size: 25px;
+}
+
+#details {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.table-caption {
+    margin-top: 0;
+}
+
+.nav-choice {
+    margin-bottom: 30px;
+}
+
+.ring-master.table,
+.jugglers.table,
+.clowns.table {
+    width: 50%; 
+    height: 150px;
+    margin: 0 auto;
+}
+
+.day-table {
+    width: 100%; 
+    margin: 0;
+    text-align: left; 
+}
+
+.point-table {
+    width: 100%; 
+    margin: 0 auto;
+}
+
+p {
+    font-size: 20px;
+    text-align: center; 
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document</title>
+    <style>
+        #container fieldset .participant-section {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        #container fieldset .participant-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .participant-section label {
+            padding: 10px 20px;
+
+        }
+
+        .participant-section label h3 {
+            font-size: 18px;
+
+        }
+
+
+        #container form .user-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 13px 0px 4px 2px;
+            overflow: scroll;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+
+            background-color: #42817c8f;
+
+            color: rgba(255, 255, 255, 0.76);
+
+            max-width: 60%;
+            width: 100%;
+            border-radius: 10px;
+            padding: 25px 30px;
+            text-transform: capitalize;
+            font-size: 17px;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            z-index: 6;
+            position: fixed;
+            margin: auto;
+            border: 2px solid rgb(255, 8, 8);
+            height: 85%;
+            top: 15%;
+            left: 20%;
+            overflow-Y: scroll;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        html,
+        body {
+            font-size: 20px;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        }
+
+        .input-box input[type="text"],
+        .input-box input[type="email"],
+        .input-box input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            border: 1px solid #d30654e5;
+            border-radius: 5px;
+            background-color: #fbffef;
+            color: #fff;
+        }
+
+
+        .input-box:hover {
+            transform: translateY(2px);
+        }
+
+        .transport-details {
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .transport-title {
+            margin-right: 100px;
+            margin-bottom: 5px;
+        }
+
+        .category {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option {
+            margin-bottom: 5px;
+        }
+
+        #content input[type="submit"] {
+
+            background-color: #35d1c48f;
+
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 5px 0px #94c795;
+        }
+
+        #content input[type="submit"]:hover {
+
+            background-color: #39beb3ef;
+
+            transform: translateY(3px);
+            box-shadow: 0px 2px 0px #398439;
+        }
+
+        #content input[type="submit"]:active {
+            transform: translateY(6px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dark-cover">
+        <div id="container">
+            <div class="title">registration</div>
+            <form action="afterRegistration.html">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">college name</span>
+                        <input type="text" placeholder="enter your college name" required />
+                    </div>
+                    <div class="input-box">
+                        <span class="details" style="margin-right:40px;">team name</span>
+                        <input type="text" placeholder="enter your team name" required />
+                    </div>
+                    <div class="input-box">
+                        <span class="details">email</span>
+                        <input type="email" placeholder="enter your email @123" required />
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details" style="margin-right:10px;">Total Participants</span>
+                        <input type="number" id="totalParticipants" name="totalParticipants" min="0" placeholder="20"
+                            required />
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Contact number</span>
+                        <input type="text" placeholder="enter your number" maxlength="10" minlength="10" required />
+                    </div>
+
+                    <div class="transport-details">
+                        <span class="transport-title">Transport Required </span>
+                        <div class="category">
+                            <input type="radio" name="transport" id="yes" value="yes" required />
+                            <label for="yes">Yes </label>
+                            <input type="radio" name="transport" id="no" value="no" required />
+                            <label for="no">No </label>
+                        </div>
+                    </div>
+
+
+                    <div class="college-id">
+                        <span class="collegeId-title">Registeration card</span>
+                        <br>
+                        <input type="file" name="college-id" accept="image/*" id="college-id" required />
+                    </div>
+
+                </div>
+
+                <fieldset>
+                    <legend>Event Selection</legend>
+                    <label for="Reel_Making">
+                        <h3>Pre-Events</h3>
+                        <input type="checkbox" name="Reel_Making" value="Reel_Making" id="Reel_Making" />Chronicles Of
+                        Meteora(Reel Making)
+                    </label> <br>
+                    <div class="participant-section" id="participant_Reel_Making">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_Reel_Making" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_Reel_Making" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+                    <label for="Magazine_Event">
+                        <input type="checkbox" name="Magazine_Event" value="Magazine_Event"
+                            id="Magazine_Event" />MERRY-GO MEG!(Magazine Event)
+                    </label> <br>
+                    <div class="participant-section" id="participant_Magazine_Event">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_Magazine_Event" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_Magazine_Event" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="Ice_Breaker">
+                        <h3>On-Stage Events</h3>
+                        <input type="checkbox" name="Ice_Breaker" value="Ice_Breaker" id="Ice_Breaker" /> Mystique
+                        March(Ice_Breaker)
+                    </label><br />
+                    <div class="participant-section" id="participant_Ice_Breaker">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_Ice_Breaker" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_Ice_Breaker" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="Dance_competition">
+                        <input type="checkbox" name="Dance_competition" value="Dance_competition"
+                            id="Dance_competition" />
+                        Whirls & Twirls(Dance competition)
+                    </label><br />
+                    <div class="participant-section" id="participant_Dance_competition">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_Dance_competition"
+                                placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_Dance_competition"
+                                placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 3:</span>
+                            <input type="text" name="participant_Dance_competition"
+                                placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 4:</span>
+                            <input type="text" name="participant_Dance_competition"
+                                placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="fashion-show">
+                        <input type="checkbox" name="fashion-show" value="fashion-show" id="fashion-show" />Fantasy
+                        Carnival Realms(fashion-show)
+                    </label><br />
+                    <div class="participant-section" id="participant_fashion-show">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 3:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 4:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 5:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 6:</span>
+                            <input type="text" name="participant_fashion_show" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="mr-mrs">
+                        <input type="checkbox" name="mr-mrs" value="mr-mrs" id="mr-mrs" /> Mr. & Miss
+                        Meteora(participants from fashion-show only)
+                    </label><br>
+                    <div class="participant-section" id="participant_mr-mrs">
+                        <div class="input-box">
+                            <span class="details">1(male)</span>
+                            <input type="text" name="participant_mr-mrs" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">2(female)</span>
+                            <input type="text" name="participant_mr-mrs" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="flag-painting">
+                        <h3>Off-Stage Events</h3>
+                        <input type="checkbox" name="flag-painting" value="flag-painting"
+                            id="flag-painting" />Flag-Tastic
+                        Splash(flag-painting)
+                    </label><br />
+                    <div class="participant-section" id="participant_flag-painting">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_flag_painting" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_flag_painting" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="flag-painting">
+                        <input type="checkbox" name="flag-painting" value="shoe-painting" id="shoe-painting" /> The Walk
+                        Of
+                        Art(flag-painting)
+                    </label><br />
+                    <div class="participant-section" id="participant_shoe-painting">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_shoe_painting" placeholder="Enter Participant Name" />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Participant 2:</span>
+                            <input type="text" name="participant_shoe_painting" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+
+                    <label for="3rd-degree">
+                        <h3>Sports Events</h3>
+                        <input type="checkbox" name="3rd-degree" value="3rd-degree" id="3rd-degree" /> The Resilient
+                        Rumble(3rd-degree)
+                    </label><br />
+                    <div class="participant-section" id="participant_3rd-degree">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_3rd-degree" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+                    <label for="arm-wrestling">
+                        <input type="checkbox" name="arm-wrestling" value="arm-wrestling" id="evt2" /> Arm Wrestling
+                        Mhayem(arm-wrestling)
+                    </label><br />
+                    <div class="participant-section" id="participant_arm-wrestling">
+                        <div class="input-box">
+                            <span class="details">Participant 1:</span>
+                            <input type="text" name="participant_arm-wrestling" placeholder="Enter Participant Name" />
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div id="buttonForm">
+                    <input type="submit" value="register" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
